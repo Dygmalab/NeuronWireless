@@ -1,0 +1,13 @@
+[submodule "libraries/Kaleidoscope"]
+	path = libraries/Kaleidoscope
+	url = git@github.com:Dygmalab/Kaleidoscope-Dygma.git
+[submodule "libraries/PluginLedLibrary"]
+	path = libraries/PluginLedLibrary
+	url = git@github.com:Dygmalab/KaleidoscopePuglinLedLibraryDefy.git
+[submodule "libraries/UpgradeKeyscanner"]
+	path = libraries/UpgradeKeyscanner
+	url = git@github.com:Dygmalab/KaleidoscopePluginKeyScannerUpgrade.git
+[submodule "libraries/Communications"]
+	path = libraries/Communications
+	url = git@github.com:Dygmalab/DefyCommunications.git
+	branch = of-rf_host_lib_integration
