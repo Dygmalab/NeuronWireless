@@ -24,7 +24,7 @@
 #include "Communications.h"
 #include "Kaleidoscope-FocusSerial.h"
 #include "nrf_gpio.h"
-#include "rf_gateway.h"
+#include "rf_gateway_api.h"
 namespace kaleidoscope
 {
 namespace plugin
@@ -51,7 +51,7 @@ void RadioManager::init()
 {
     NRF_LOG_INFO("Working with RF");
     inited = true;
-    rfgw_init();
+    rfgw_host_init();
     rfgw_addr_set(rfgw_addr_suggest());
     setPowerRF();
     rfgw_enable();
