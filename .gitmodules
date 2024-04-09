@@ -11,3 +11,9 @@
 	path = libraries/Communications
 	url = git@github.com:Dygmalab/DefyCommunications.git
 	branch = of-rf_host_lib_integration
+[submodule "libraries/Arduino"]
+	path = libraries/Arduino
+	url = git@github.com:Dygmalab/Arduino_NRF5.git
+[submodule "libraries/Ble_composite_dev"]
+	path = libraries/Ble_composite_dev
+	url = git@github.com:Dygmalab/Ble_composite_dev.git
