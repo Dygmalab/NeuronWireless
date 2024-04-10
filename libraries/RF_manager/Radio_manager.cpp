@@ -24,7 +24,7 @@
 #include "Communications.h"
 #include "Kaleidoscope-FocusSerial.h"
 #include "nrf_gpio.h"
-#include "rf_gateway_api.h"
+#include "rf_host_device_api.h"
 namespace kaleidoscope
 {
 namespace plugin

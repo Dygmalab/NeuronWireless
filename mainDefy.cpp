@@ -82,7 +82,7 @@ extern "C"
 #include "Radio_manager.h"
 #include "Upgrade.h"
 #include "nrf_fstorage.h"
-#include "rf_gateway_api.h"
+#include "rf_host_device_api.h"
 #include <Adafruit_TinyUSB.h>
 
 #if !COMPILE_FOR_NEURON_2_HARDWARE_V1_0 && !COMPILE_FOR_NEURON_2_HARDWARE_V1_1
@@ -351,7 +351,7 @@ void yield(void);
 void setup(void)
 {
     // RF Host library
-    rf_host_lib_init();
+    rfhdev_api_init();
 
     // GPIO
     gpio_output_voltage_setup();
