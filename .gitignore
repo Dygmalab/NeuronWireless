@@ -1,0 +1,15 @@
+Output
+
+# Eclipse project
+/.metadata/
+.settings/
+.project
+.cproject
+# Clion project
+.idea
+# Vscode project
+.vscode/
+cmake-build-debug/
+compile_commands.json
+
+SDK
