@@ -1,9 +1,6 @@
 [submodule "libraries/Kaleidoscope"]
 	path = libraries/Kaleidoscope
 	url = git@github.com:Dygmalab/Kaleidoscope-Dygma.git
-[submodule "libraries/PluginLedLibrary"]
-	path = libraries/PluginLedLibrary
-	url = git@github.com:Dygmalab/KaleidoscopePuglinLedLibraryDefy.git
 [submodule "libraries/UpgradeKeyscanner"]
 	path = libraries/UpgradeKeyscanner
 	url = git@github.com:Dygmalab/KaleidoscopePluginKeyScannerUpgrade.git
@@ -21,3 +18,6 @@
 	path = libraries/rf_host_device/rf_host_device
 	url = git@github.com:Dygmalab/rf_host_device.git
 	branch = main
+[submodule "libraries/NeuronLedLibrary"]
+	path = libraries/NeuronLedLibrary
+	url = git@github.com:Dygmalab/NeuronLedLibrary.git
