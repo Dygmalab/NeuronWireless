@@ -18,6 +18,18 @@ NeuronWireless is built to be loaded into the Nordic Semiconductor nRF52833 micr
 ## Requirements
 * `make`
 * `gcc-arm-none-eabi`
+* `python 3.11`
+* `IntelHex` Python library
+
+To cover these requirements in Ubuntu based distributions, install the `build-essential` package. For other Linux distros install them independently.
+
+Install the toolchain for the arm chips
+
+```sudo apt install gcc-arm-none-eabi```
+
+For installing the `IntelHex` call
+
+```sudo pip install intelhex```
 
 ## Preparations
 
