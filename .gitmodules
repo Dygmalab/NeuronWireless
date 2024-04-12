@@ -17,3 +17,7 @@
 [submodule "libraries/Ble_composite_dev"]
 	path = libraries/Ble_composite_dev
 	url = git@github.com:Dygmalab/Ble_composite_dev.git
+[submodule "libraries/rf_host_device/rf_host_device"]
+	path = libraries/rf_host_device/rf_host_device
+	url = git@github.com:Dygmalab/rf_host_device.git
+	branch = main
