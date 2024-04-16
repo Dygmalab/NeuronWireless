@@ -1,11 +1,14 @@
 name: Build
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
+      inputs:
+      version:
+        description: 'FMW version'
+        required: true
+        type: string
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
@@ -13,20 +16,19 @@ env:
 
 jobs:
   build:
-    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
-    # You can convert this to a matrix build if you need cross-platform coverage.
-    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository and submodules with token
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: recursive
           token: ${{ secrets.TOKEN }}
 
-      - name: Install dependencies
-        run: sudo apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential libstdc++-arm-none-eabi-newlib
+#      - name: Install dependencies
+#        run: sudo apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential libstdc++-arm-none-eabi-newlib
+
+      - uses: ./.github/actions/setup
 
       - name: Build
         run: cd build; make release
@@ -35,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Compilation
-          path: build/release/Wireless_neuron.hex.hex
+          path: build/release/Wireless_neuron_final.hex
