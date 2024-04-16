@@ -43,3 +43,11 @@ For installing the `IntelHex` call
 `cd NeuronWireless/build`
 
 `make release` or `make debug`
+
+## Flash
+
+In order to upload the firmware into the Neuron, download Dygma flasher tool
+
+https://github.com/Dygmalab/firmware-flasher/releases/latest
+
+Follow the instructions described in its repository.
