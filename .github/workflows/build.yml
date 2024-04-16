@@ -18,21 +18,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository and submodules with token
+      - name: Checkout repository and submodules
         uses: actions/checkout@v4
         with:
           submodules: recursive
-
-#      - name: Install dependencies
-#        run: sudo apt install -y cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential libstdc++-arm-none-eabi-newlib
+          
+      - name: Get Nordic SDK
+          run: mkdir -p libraries/SDK
+          run: wget https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/sdks/nrf5/binaries/nrf5_sdk_17.1.0_ddde560.zip
+          run: unzip nrf5_sdk_17.1.0_ddde560.zip -d libraries/SDK
 
       - uses: ./.github/actions/setup
 
       - name: Build
-        run: cd build; make release
+        run: cd build; make -j4 release
 
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Compilation
           path: build/release/Wireless_neuron_final.hex
