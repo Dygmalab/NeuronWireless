@@ -23,10 +23,11 @@ jobs:
         with:
           submodules: recursive
           
-      # - name: Get Nordic SDK
-          # run: mkdir -p libraries/SDK
-          # run: wget https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/sdks/nrf5/binaries/nrf5_sdk_17.1.0_ddde560.zip
-          # run: unzip nrf5_sdk_17.1.0_ddde560.zip -d libraries/SDK
+      - name: Get Nordic SDK
+          run: |
+            mkdir -p libraries/SDK
+            wget https://nsscprodmedia.blob.core.windows.net/prod/software-and-other-downloads/sdks/nrf5/binaries/nrf5_sdk_17.1.0_ddde560.zip
+            unzip nrf5_sdk_17.1.0_ddde560.zip -d libraries/SDK
 
       - uses: ./.github/actions/setup
 
