@@ -33,6 +33,8 @@ SDK_NRF5_SDK_ROOT_DIR = $(SDK_ROOT_DIR)/$(NRF5_SDK)/
 KALEIDOSCOPE_ROOT_DIR = $(LIB_ROOT_DIR)/Kaleidoscope/
 KEYBOARDIO_HID_ROOT_DIR = $(LIB_ROOT_DIR)/KeyboardioHID/
 
+# Utils root directory
+UTILS_ROOT_DIR = $(COMMON_ROOT_DIR)/utils/
 
 #-------------------------------------------------------------------------------
 # Include common definitions
@@ -137,6 +139,12 @@ DEFINES += -DAPP_TIMER_V2_RTC1_ENABLED
 DEFINES += -DNRFX_PPI_ENABLED=1
 DEFINES += -DNRF52_ARCH
 
+
+#-------------------------------------------------------------------------------
+# RF Host Device
+#-------------------------------------------------------------------------------
+
+RF_HOST_DEVICE_HEX = $(LIB_ROOT_DIR)/rf_host_device/rf_host_device/bin/rf_host_device.hex
 
 #-------------------------------------------------------------------------------
 # Library search directiories
@@ -411,6 +419,8 @@ $(BINARY_OUTPUT): $(OBJSC) $(OBJSCXX) $(OBJSA) $(OBJSa)
 	@echo "Creating application binaries ..."
 	$(OBJCOPY) -O binary $@.elf $@.bin
 	$(OBJCOPY) -O ihex $@.elf $@.hex
+	@echo "Creating final application binary ..."
+	python $(UTILS_ROOT_DIR)/fw_package_builder.py $(RF_HOST_DEVICE_HEX) $@.hex $@_final.hex
 	@echo "Creating application binaries done."
 
 clean:

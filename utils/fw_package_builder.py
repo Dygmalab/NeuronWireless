@@ -1,3 +1,4 @@
+import os
 import sys
 from intelhex import IntelHex
 
@@ -7,9 +8,25 @@ def main(hex_file1, hex_file2, hex_merged):
     ih_gap = IntelHex()
     ih_merged = IntelHex()
     
+    # Remove the existent output file
+    if( os.path.exists(hex_merged) ):
+        os.remove( hex_merged )
+    
     ih1.fromfile(hex_file1,format='hex')
     ih2.fromfile(hex_file2,format='hex')
 
+    # Ensure the sequence of files
+    if( ih1.minaddr() > ih2.minaddr() ):
+        ih_temp = ih1
+        ih1 = ih2
+        ih2 = ih_temp
+        
+    
+    # Prevent the overlap
+    if( ih1.maxaddr() >= ih2.minaddr() ):
+        sys.exit( "The files are overlapping each other." )
+
+    # Fill the gap between the files
     for addr in range( ih1.maxaddr() + 1, ih2.minaddr() ):
         ih_gap[addr] = 0xFF
 
@@ -20,7 +37,7 @@ def main(hex_file1, hex_file2, hex_merged):
     ih_merged.write_hex_file(hex_merged)
 
 if __name__ == "__main__":
-    hex_file1 = "../libraries/rf_host_device/rf_host_device/bin/rf_host_device.hex"
-    hex_file2 = "../build/" + sys.argv[1] + "/Wireless_neuron.hex"
-    hex_merged = "Wireless_neuron_packed.hex"
+    hex_file1 = sys.argv[1]
+    hex_file2 = sys.argv[2]
+    hex_merged = sys.argv[3]
     main(hex_file1, hex_file2, hex_merged)
