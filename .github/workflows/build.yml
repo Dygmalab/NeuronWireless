@@ -34,7 +34,7 @@ jobs:
         run: cd build; make -j4 release
 
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: Compilation
           path: build/release/Wireless_neuron_final.hex
