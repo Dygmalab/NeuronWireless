@@ -17,7 +17,7 @@ NeuronWireless is built to be loaded into the Nordic Semiconductor nRF52833 micr
 
 ## Requirements
 * `make`
-* `gcc-arm-none-eabi`
+* `gcc-arm-none-eabi 10.3.1`
 * `python 3.11`
 * `IntelHex` Python library
 
