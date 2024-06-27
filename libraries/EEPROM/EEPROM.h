@@ -1,8 +1,13 @@
 /*
-    EEPROM.cpp - RPI2040 EEPROM emulation
+    EEPROM.cpp - RP2040 EEPROM emulation
+    Copyright (c) 2021 Earle F. Philhower III. All rights reserved.
 
+    Based on ESP8266 EEPROM library, which is
     Copyright (c) 2014 Ivan Grokhotkov. All rights reserved.
-    This file is part of the esp8266 core for Arduino environment.
+
+    Based on Nordic Semiconductor SDK nrf5_sdk_17.1.0_ddde560, which is
+    Copyright (C) 2020  Dygma Lab S.L.
+    All rights reserved.
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -17,6 +22,8 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+    Author: Juan Hauara @JuanHauara
 */
 
 #pragma once

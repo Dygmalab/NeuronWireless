@@ -182,6 +182,9 @@ INCDIR += -I$(LIB_ROOT_DIR)/CRC/
 INCDIR += -I$(LIB_ROOT_DIR)/Battery_manager/
 INCDIR += -I$(LIB_ROOT_DIR)/Ble_manager/
 INCDIR += -I$(LIB_ROOT_DIR)/RF_manager/
+INCDIR += -I$(LIB_ROOT_DIR)/utils/Do_once/
+INCDIR += -I$(LIB_ROOT_DIR)/utils/Run_task_once/
+INCDIR += -I$(LIB_ROOT_DIR)/utils/Timer/
 
 # Kaleidoscope
 INCDIR += -I$(KALEIDOSCOPE_ROOT_DIR)/src/
@@ -270,6 +273,7 @@ SRCSCXX += $(LIB_ROOT_DIR)/CRC/CRC_wrapper.cpp
 SRCSCXX += $(LIB_ROOT_DIR)/Battery_manager/Battery.cpp
 SRCSCXX += $(LIB_ROOT_DIR)/Ble_manager/Ble_manager.cpp
 SRCSCXX += $(LIB_ROOT_DIR)/RF_manager/Radio_manager.cpp
+SRCSCXX += $(LIB_ROOT_DIR)/utils/Timer/Timer.cpp
 
 # SDK
 SRCSC += $(SDK_NRF5_SDK_ROOT_DIR)/components/ble/ble_advertising/ble_advertising.c

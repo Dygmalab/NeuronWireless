@@ -1,3 +1,62 @@
+/* -*- mode: c++ -*-
+ * Manage the Spi_slave communication between the Neuron 2 and the keyscanners.
+ * Copyright (C) 2020  Dygma Lab S.L.
+ *
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License as published by the Free Software
+ * Foundation, version 3.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Author: Juan Hauara @JuanHauara
+ */
+
+/*
+    This class implements EasyDMA for accessing RAM without CPU involvement.
+
+    Some chips like the NRF52833 require the chip select signal to goes high
+    at the end of the transmission for the SPI to work correctly.
+    On this particular chip the SPI will not work if the chip select signal
+    is left low permanently.
+
+    The default options:
+    nrf_spis_mode_t spi_mode = NRF_SPIS_MODE_0,
+    nrf_gpio_pin_drive_t pin_miso_strength = NRF_GPIO_PIN_S0S1,
+    nrf_gpio_pin_pull_t pin_csn_pullup = NRF_GPIO_PIN_NOPULL);
+
+    Official documentation:
+    https://infocenter.nordicsemi.com/topic/sdk_nrf5_v17.1.0/hardware_driver_spi_slave.html
+    https://infocenter.nordicsemi.com/topic/sdk_nrf5_v17.1.0/group__nrfx__spis.html
+
+    Default configuration of the SPI slave instance:
+    {
+        .miso_pin = NRFX_SPIS_PIN_NOT_USED,
+        .mosi_pin = NRFX_SPIS_PIN_NOT_USED,
+        .sck_pin = NRFX_SPIS_PIN_NOT_USED,
+        .csn_pin = NRFX_SPIS_PIN_NOT_USED,
+        .mode = NRF_SPIS_MODE_0,
+        .bit_order = NRF_SPIS_BIT_ORDER_MSB_FIRST,
+        .csn_pullup = NRFX_SPIS_DEFAULT_CSN_PULLUP,   // NRFX_SPIS_DEFAULT_CSN_PULLUP is -> NRF_GPIO_PIN_NOPULL
+        .miso_drive = NRFX_SPIS_DEFAULT_MISO_DRIVE,   // NRFX_SPIS_DEFAULT_MISO_DRIVE is -> NRF_GPIO_PIN_S0S1
+        .def = NRFX_SPIS_DEFAULT_DEF,
+        .orc = NRFX_SPIS_DEFAULT_ORC,
+        .irq_priority = NRFX_SPIS_DEFAULT_CONFIG_IRQ_PRIORITY,
+    }
+
+    NRF_SPIS_MODE_0: SCK active high, sample on leading edge of clock.  -> CPOL = 0 / CPHA = 0
+    NRF_SPIS_MODE_1: SCK active high, sample on trailing edge of clock. -> CPOL = 0 / CPHA = 1
+    NRF_SPIS_MODE_2: SCK active low, sample on leading edge of clock.   -> CPOL = 1 / CPHA = 0
+    NRF_SPIS_MODE_3: SCK active low, sample on trailing edge of clock.  -> CPOL = 1 / CPHA = 1
+
+    Author: Juan Hauara @JuanHauara
+*/
+
 #include "Spi_slave.h"
 #include "Ble_composite_dev.h"
 #include "CRC_wrapper.h"

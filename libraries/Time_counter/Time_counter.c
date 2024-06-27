@@ -40,7 +40,9 @@ static void timer_event_handler(nrf_timer_event_t event_type, void *p_context)
 {
     // There is an interrupt every micros_resolution microseconds.
     if (event_type == TIMER_COMPARE_EVENT_NUMBER)
+    {
         global_microseconds += global_micros_resolution;
+    }
 }
 
 static uint64_t timer_counter_calc_compare_value(void)

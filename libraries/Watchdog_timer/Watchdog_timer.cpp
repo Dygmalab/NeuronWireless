@@ -1,5 +1,5 @@
 /*
- * Time Counter -- Class to count time in milliseconds and microseconds.
+ * Class to manage the Neuron 2 MCU watchdog.
  *
  * First, you need to enable the watchdog with the NRFX_WDT_ENABLED flag in the sdk_config.h file
  * and set the timeout in [ms] with NRFX_WDT_CONFIG_RELOAD_VALUE.
@@ -18,8 +18,7 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * Author:
- * Date:
+ * Author: Juan Hauara @JuanHauara
  *
  */
 
