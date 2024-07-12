@@ -1,29 +1,29 @@
 /*
-    EEPROM.cpp - RP2040 EEPROM emulation
-    Copyright (c) 2021 Earle F. Philhower III. All rights reserved.
-
-    Based on ESP8266 EEPROM library, which is
-    Copyright (c) 2014 Ivan Grokhotkov. All rights reserved.
-
-    Based on Nordic Semiconductor SDK nrf5_sdk_17.1.0_ddde560, which is
-    Copyright (C) 2020  Dygma Lab S.L.
-    All rights reserved.
-
-    This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Lesser General Public
-    License as published by the Free Software Foundation; either
-    version 2.1 of the License, or (at your option) any later version.
-
-    This library is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public
-    License along with this library; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-    Author: Juan Hauara @JuanHauara
+ *  EEPROM.cpp - nRF52833 EEPROM emulation
+ *  Copyright (C) 2020  Dygma Lab S.L. All rights reserved.
+ *
+ *  Based on RP2040 EEPROM library, which is
+ *  Copyright (c) 2021 Earle F. Philhower III. All rights reserved.
+ *
+ *  Based on ESP8266 EEPROM library, which is
+ *  Copyright (c) 2014 Ivan Grokhotkov. All rights reserved.
+ *
+ *  This library is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU Lesser General Public
+ *  License as published by the Free Software Foundation; either
+ *  version 2.1 of the License, or (at your option) any later version.
+ *
+ *  This library is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ *  Lesser General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Lesser General Public
+ *  License along with this library; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ *  Mantainer: Gustavo Gomez Lopez @Noteolvides
+ *  Mantainer: Juan Hauara @JuanHauara
 */
 
 #include "EEPROM.h"

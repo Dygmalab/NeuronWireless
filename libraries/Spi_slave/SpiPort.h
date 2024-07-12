@@ -1,7 +1,6 @@
 /* -*- mode: c++ -*-
  * kaleidoscope::device::dygma::Wired -- Kaleidoscope device plugin for Dygma Wired
- * Copyright (C) 2017-2019  Keyboard.io, Inc
- * Copyright (C) 2017-2019  Dygma Lab S.L.
+ * Copyright (C) 2020-2023  Dygma Lab S.L.
  *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -15,7 +14,8 @@
  * You should have received a copy of the GNU General Public License along with
  * this program. If not, see <http://www.gnu.org/licenses/>.
  *
- * Author: Juan Hauara @JuanHauara
+ *  Mantainer: Gustavo Gomez Lopez @Noteolvides
+ *  Mantainer: Juan Hauara @JuanHauara
  */
 
 #ifndef SPICOMUNICATIONS_H_

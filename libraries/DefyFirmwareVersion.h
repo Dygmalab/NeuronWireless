@@ -1,5 +1,5 @@
 /*
- * kaleidoscope::plugin::RaiseFirmwareVersion -- Tell the firmware version via Focus
+ * kaleidoscope::plugin::DefyFirmwareVersion -- Tell the firmware version via Focus
  *
  * Copyright (C) 2020  Dygma Lab S.L.
  *

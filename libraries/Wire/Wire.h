@@ -1,5 +1,5 @@
 /*
- * Arduino Wire wrapper for the NRF52 chips.
+ * Arduino interface wrapper of the Wire library to use TWI_MASTER functions for the NRF52 chips.
  * Copyright (C) 2020  Dygma Lab S.L.
  *
  * This program is free software: you can redistribute it and/or modify it under
