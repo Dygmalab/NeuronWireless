@@ -1,4 +1,7 @@
-# NeuronWireless
+# IMPORTANT:
+This repository is archived. The new repositories are [NeuronWireless_defy](https://github.com/Dygmalab/NeuronWireless_defy) and [NeuronWireless_raise2](https://github.com/Dygmalab/NeuronWireless_raise2).
+
+## NeuronWireless
 nRF MCU family version for the Neuron Platform
 
 ## Target device
